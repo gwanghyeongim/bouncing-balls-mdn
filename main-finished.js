@@ -133,13 +133,15 @@ EvilCircle.prototype.checkBounds = function() {
 EvilCircle.prototype.setControls = function() {
     let _this = this;
     window.onkeydown = function(e) {
-        if (e.key === 'a') {
+        console.log(e.key, e.keyCode)
+        // up right down left w d s a
+        if (e.keyCode === 65 || e.keyCode === 37) {
             _this.x -= _this.velX;
-        } else if (e.key === 'd') {
+        } else if (e.keyCode === 68 || e.keyCode === 39 ) {
             _this.x += _this.velX;
-        } else if (e.key === 'w') {
+        } else if (e.keyCode === 87 || e.keyCode === 38 ) {
             _this.y -= _this.velY;
-        } else if (e.key === 's') {
+        } else if (e.keyCode === 83 || e.keyCode === 40 ) {
             _this.y += _this.velY;
         }
     }
